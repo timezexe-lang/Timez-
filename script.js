@@ -1,0 +1,12 @@
+const menuBtn=document.querySelector('#menuBtn');const nav=document.querySelector('#navLinks');menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const audio=document.querySelector('#audio'),playBtn=document.querySelector('#playBtn'),bar=document.querySelector('#progressBar'),time=document.querySelector('#time'),trackText=document.querySelector('#trackText');
+const fmt=s=>`${Math.floor(s/60)||0}:${String(Math.floor(s%60)||0).padStart(2,'0')}`;
+audio.loop=true;audio.preload='auto';
+let firstTapArmed=false;
+const markPlaying=()=>{playBtn.textContent='❚❚';trackText.textContent='NOW PLAYING • PHONK VIBES'};
+const startOnFirstTap=()=>{if(firstTapArmed)return;firstTapArmed=true;trackText.textContent='AUTOPLAY BLOCKED • TAP ANYWHERE TO START';const start=async()=>{try{await audio.play();markPlaying();document.removeEventListener('pointerdown',start);document.removeEventListener('keydown',start)}catch(e){trackText.textContent='Add your MP3 as assets/phonk.mp3'}};document.addEventListener('pointerdown',start,{passive:true});document.addEventListener('keydown',start)};
+window.addEventListener('load',async()=>{try{await audio.play();markPlaying()}catch(e){startOnFirstTap()}});
+playBtn.addEventListener('click',async()=>{try{if(audio.paused){await audio.play();playBtn.textContent='❚❚';trackText.textContent='NOW PLAYING • PHONK VIBES'}else{audio.pause();playBtn.textContent='▶'}}catch(e){trackText.textContent='Add your MP3 as assets/phonk.mp3'}});
+audio.addEventListener('timeupdate',()=>{if(audio.duration){bar.style.width=`${audio.currentTime/audio.duration*100}%`;time.textContent=fmt(audio.currentTime)}});audio.addEventListener('ended',()=>playBtn.textContent='▶');audio.addEventListener('error',()=>trackText.textContent='Add your MP3 as assets/phonk.mp3');
+document.querySelectorAll('[data-placeholder]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();alert('Replace this button link in index.html with your real profile URL.')}));document.querySelector('#year').textContent=new Date().getFullYear();

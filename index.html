@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08000d" />
+  <meta name="description" content="TIMEZ_EXE 𓊈∆𓊉 𝐃𝐄𝐕 — Game Developer, Web Developer, Digital Creator and Vibe Coder." />
+  <title>TIMEZ_EXE 𓊈∆𓊉 𝐃𝐄𝐕</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav">
+    <a class="brand" href="#home">TIMEZ<span>_EXE</span></a>
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="navLinks">
+      <a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#work">WORK</a><a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">NIGERIA 🇳🇬 → GLOBAL</p>
+        <h1 class="glitch" data-text="TIMEZ_EXE">TIMEZ_EXE</h1>
+        <h2>𓊈∆𓊉 𝐃𝐄𝐕</h2>
+        <p class="roles"><span>GAME DEV</span><b>/</b><span>WEB DEV</span><b>/</b><span>VIBE CODER</span><b>/</b><span>CREATOR</span></p>
+        <p class="intro">I turn ideas into interactive digital experiences — building games, websites and bold experiments one line at a time.</p>
+        <div class="actions"><a class="btn primary" href="#work">VIEW MY WORK</a><a class="btn ghost" href="#about">ABOUT ME</a></div>
+      </div>
+      <a class="scroll" href="#about">SCROLL ↓</a>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-tag">01 // ABOUT</div>
+      <div class="about-grid">
+        <div class="portrait-wrap reveal"><img src="assets/portrait.png" alt="TIMEZ_EXE cyberpunk developer artwork" loading="lazy" /></div>
+        <div class="reveal">
+          <p class="eyebrow">WHO IS TIMEZ_EXE?</p>
+          <h3>Dream. Code. Build. Repeat.</h3>
+          <p>I'm <strong>TIMEZ_EXE 𓊈∆𓊉 𝐃𝐄𝐕</strong>, a Nigerian developer and digital creator focused on turning ambitious ideas into things people can actually experience.</p>
+          <p>I work across game development, web development, 3D concepts and creative technology. I'm also a <strong>Vibe Coder</strong>: I like moving from an idea to a working prototype fast, experimenting, improving and learning while I build.</p>
+          <div class="quote">“TURNING IDEAS INTO REALITY, ONE LINE OF CODE AT A TIME.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-tag">02 // SKILLS</div><p class="eyebrow">WHAT I DO</p><h3>BUILD MODE: ON</h3>
+      <div class="skills-grid">
+        <article class="card reveal"><span>🎮</span><h4>Game Development</h4><p>Gameplay systems, mobile controls, open-world prototypes and interactive experiences.</p></article>
+        <article class="card reveal"><span>⌨</span><h4>Web Development</h4><p>Responsive websites with strong visuals, interactions and mobile-first layouts.</p></article>
+        <article class="card reveal"><span>⚡</span><h4>Vibe Coding</h4><p>Rapidly turning concepts into working builds through experimentation, iteration and creative tools.</p></article>
+        <article class="card reveal"><span>◈</span><h4>3D & Creative</h4><p>World-building, asset integration, visual concepts and digital content creation.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-tag">03 // PORTFOLIO</div><p class="eyebrow">FEATURED PROJECT</p><h3>LAGOSLIFERP</h3>
+      <article class="project reveal">
+        <div class="project-image"><img src="assets/banner.png" alt="TIMEZ_EXE cyberpunk banner" loading="lazy" /></div>
+        <div class="project-copy"><span class="status">● IN DEVELOPMENT</span><h4>LagosLifeRP</h4><p>A Nigerian open-world role-playing game project inspired by the energy of Lagos. Built around exploration, driving, local streets, vehicles and everyday city life.</p><div class="chips"><span>GODOT</span><span>3D</span><span>ANDROID</span><span>OPEN WORLD</span></div><p class="small">Built with a focus on bringing a recognizably Nigerian world to mobile.</p></div>
+      </article>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-tag">04 // CONTACT</div><p class="eyebrow">LET'S CONNECT</p><h3>BUILD SOMETHING DIFFERENT.</h3>
+      <p>Want to follow my work, collaborate, or talk about a project? Find me online.</p>
+      <div class="contact-buttons">
+        <a class="btn primary" href="#" data-placeholder>GITHUB</a><a class="btn ghost" href="#" data-placeholder>TIKTOK</a><a class="btn ghost" href="mailto:your@email.com">EMAIL</a>
+      </div>
+    </section>
+  </main>
+
+  <aside class="player" id="player">
+    <button id="playBtn" aria-label="Play phonk">▶</button>
+    <div class="track"><strong>PHONK MODE</strong><span id="trackText">PHONK READY • autoplay enabled</span><div class="progress"><i id="progressBar"></i></div></div>
+    <span id="time">0:00</span>
+    <audio id="audio" autoplay loop preload="auto"><source src="assets/phonk.mp3" type="audio/mpeg" /></audio>
+  </aside>
+
+  <footer>© <span id="year"></span> TIMEZ_EXE 𓊈∆𓊉 𝐃𝐄𝐕 // MADE TO BUILD.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
